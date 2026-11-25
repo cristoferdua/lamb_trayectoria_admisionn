@@ -1,0 +1,19 @@
+name: lamb-hola-dev
+
+services:
+  postgres-hola-dev:
+    image: postgres:16-alpine
+    container_name: lamb-postgres-hola-dev
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: lamb_hola_db
+      POSTGRES_USER: lamb
+      POSTGRES_PASSWORD: lamb
+    ports:
+      - "15461:5432"
+    volumes:
+      - lamb_hola_dev_data:/var/lib/postgresql/data
+
+volumes:
+  lamb_hola_dev_data:
+    name: lamb-hola-data

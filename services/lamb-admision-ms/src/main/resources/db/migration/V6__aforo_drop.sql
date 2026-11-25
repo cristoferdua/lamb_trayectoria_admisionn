@@ -1,0 +1,1 @@
+ALTER TABLE examenes_admision ALTER COLUMN aforo_maximo DROP NOT NULL;

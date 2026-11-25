@@ -1,0 +1,1 @@
+ALTER TABLE seguimientos_postulante ALTER COLUMN asunto DROP NOT NULL

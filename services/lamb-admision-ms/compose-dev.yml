@@ -1,0 +1,20 @@
+name: lamb-admision-dev
+
+services:
+  postgres-admision-dev:
+    image: postgres:16-alpine
+    container_name: lamb-postgres-admision-dev
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: lamb_admision_db
+      POSTGRES_USER: lamb
+      POSTGRES_PASSWORD: lamb
+    ports:
+      - "15454:5432"
+    volumes:
+      - lamb_admision_dev_data:/var/lib/postgresql/data
+
+volumes:
+  lamb_admision_dev_data:
+    # volumen propio: el proyecto 'lamb oficial' usa lamb-admision-dev_lamb_admision_dev_data con otras migraciones V6-V10
+    name: lamb-modulo02-admision-data
